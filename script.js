@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let username = document.getElementById("name").value;
         let email = document.getElementById("email").value;
-        let pass = document.getElementById("pw").value;
+        let pass = document.getElementById("password").value;
         let dateOfBirth = document.getElementById("dob").value;
         let acceptConditions = document.getElementById("accept").checked;
         console.log(username,email,pass,dateOfBirth,acceptConditions);
