@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         let pass = document.getElementById("pw").value;
         let dateOfBirth = document.getElementById("dob").value;
         let acceptConditions = document.getElementById("accept").checked;
+        console.log(username,email,pass,dateOfBirth,acceptConditions);
 
         if (!username || !email || !pass || !dateOfBirth) {
             errorMessage.textContent = "All fields are required.";
