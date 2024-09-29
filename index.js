@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('registration');
     const tableBody = document.getElementById('tableBody');
-    const errorMessage = document.getElementById('errorMessage'); // Add this element to your HTML
+    const dobError = document.getElementById('dobError');
 
     loadEntries();
 
@@ -10,20 +10,26 @@ document.addEventListener('DOMContentLoaded', () => {
 
         let username = document.getElementById("name").value;
         let email = document.getElementById("email").value;
-        let pass = document.getElementById("pw").value;
+        let pass = document.getElementById("password").value;
         let dateOfBirth = document.getElementById("dob").value;
         let acceptConditions = document.getElementById("accept").checked;
         console.log(username,email,pass,dateOfBirth,acceptConditions);
 
-        if (!username || !email || !pass || !dateOfBirth) {
-            errorMessage.textContent = "All fields are required.";
+        // if (!username || !email || !pass || !dateOfBirth) {
+        //     errorMessage.textContent = "All fields are required.";
+        //     return;
+        // }
+        if (!isValidEmail(email)) {
+            alert("Please enter a valid email address.");
             return;
         }
 
         const age = calculateAge(dateOfBirth);
         if (!validAge(age)) {
-            errorMessage.textContent = `You are ${age} years old. You must be between 18 and 55 years old. Please change your date of birth.`;
+            dobError.textContent = `You are ${age} years old. You must be between 18 and 55 years old. Please change your date of birth.`;
             return;
+        } else {
+            dobError.textContent = ''; // Clear the error message
         }
 
         errorMessage.textContent = '';
@@ -54,6 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function validAge(age) {
         return age >= 18 && age <= 55;
+    }
+    function isValidEmail(email) {
+        // Simple regex for email validation
+        const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        return emailPattern.test(email);
     }
 
     function saveEntry(entry) {
