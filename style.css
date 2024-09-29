@@ -1,0 +1,82 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family:Arial, Helvetica, sans-serif;
+    font-size: 20px;
+}
+.container{
+    /* height: 50vh; */
+    width:100vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    flex-direction: column;
+}
+.registration > p,.entries>p{
+    text-align: center;
+    margin: 0;
+    padding: 10px;
+    font-size:larger;
+    font-weight: bold;
+    
+}
+.registration{
+    height: auto;
+    width:50vw;
+    background-color:#f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 4px -3px 10px 8px rgba(0, 0, 0, 0.1);
+}
+input{
+    height:25px;
+    width:100%;
+}
+
+.form{
+    padding: 10px;
+}
+.input-area{
+    margin-top: 5px;
+    height: 30px;
+    border: 2px solid #918f8f;
+}
+
+#accept{
+    height:20px;
+    width:20px;
+    /* margin-top:10px; */
+    vertical-align: top;
+}
+label.accept{
+    padding-left: 5px;
+}
+.submit{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* height:35px; */
+}
+.submit > button{
+    height: 35px;
+    width: 100px;
+    background-color: rgb(150, 150, 230); 
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.entries{
+    height: auto;
+    width:50vw;
+    background-color:#f9f9f9;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 4px -3px 10px 8px rgba(0, 0, 0, 0.1);
+}
+th,td{
+    height: 20px;
+    width: 400px;
+    border: 1px solid rgba(136, 135, 135, 0.758);
+    text-align: center;
+}
